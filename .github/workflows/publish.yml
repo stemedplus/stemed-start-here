@@ -1,14 +1,15 @@
 name: Publish
 
-# Publishes the Start Here page to GitHub Pages on every change to main and once a week,
-# after refreshing the shared STEMEd+ look (green band, menu, footer).
+# Publishes the Start Here page to GitHub Pages on every change to main and every day, after
+# refreshing the shared STEMEd+ look (green band, menu, footer) and the STEMEd+ member count
+# (site/members.json, which the stemedplus.org homepage shows).
 # Turn on once: Settings -> Pages -> Source: GitHub Actions.
 
 on:
   push:
     branches: [main]
   schedule:
-    - cron: "17 14 * * 1"
+    - cron: "17 10 * * *"
   workflow_dispatch:
 
 permissions:
@@ -36,6 +37,10 @@ jobs:
         run: |
           git clone --depth 1 https://github.com/stemedplus/stemedplus-theme.git "$RUNNER_TEMP/stemedplus-theme"
           python "$RUNNER_TEMP/stemedplus-theme/apply.py" .
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Refresh the member count
+        run: python scripts/member_count.py
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

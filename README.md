@@ -19,3 +19,13 @@ The homepage shows what you can do on STEMEd+. This page says why it exists and 
 Everything is in `site/index.html`, as plain HTML. The design lives on the STEMEd+ design canvas
 (board 1); copy changes there into this file. The green band, menu, and footer come from
 [stemedplus-theme](https://github.com/stemedplus/stemedplus-theme) and are refreshed on every publish.
+
+## Member count
+
+`site/members.json` holds the number of STEMEd+ Commons members and the date it was read, for the
+member-count block on the stemedplus.org homepage. The Publish workflow runs every day and
+refreshes it first with `scripts/member_count.py`, which reads the total shown on STEMEd+ Commons'
+own [members page](https://stemedplus.profile.hcommons.org/members/). Only the number and the date
+are kept. If the page can't be read, or the total looks wrong (less than half the last one), the
+last good number stays. The homepage block shows the number typed into it until the file loads.
+Tests: `python -m unittest discover -s tests -v`.
