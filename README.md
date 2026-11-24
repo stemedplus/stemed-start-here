@@ -22,10 +22,12 @@ Everything is in `site/index.html`, as plain HTML. The design lives on the STEME
 
 ## Member count
 
-`site/members.json` holds the number of STEMEd+ Commons members and the date it was read, for the
+`site/members.json` holds the number of STEMEd+ Commons members and the date it was counted, for the
 member-count block on the stemedplus.org homepage. The Publish workflow runs every day and
-refreshes it first with `scripts/member_count.py`, which reads the total shown on STEMEd+ Commons'
-own [members page](https://stemedplus.profile.hcommons.org/members/). Only the number and the date
-are kept. If the page can't be read, or the total looks wrong (less than half the last one), the
-last good number stays. The homepage block shows the number typed into it until the file loads.
+refreshes it first with `scripts/member_count.py`, which counts members through the STEMEd+ Commons
+[Profiles API](https://stemedplus.profile.hcommons.org/api/v1/members/). The API lists 20 members a
+page with a link to the next page and no total, so the script follows the pages to the end and
+counts distinct usernames. Only the number and the date are kept, nothing about any member. If the
+API can't be read, stops part way, or the total looks wrong (less than half the last one), the last
+good number stays. The homepage block shows the number typed into it until the file loads.
 Tests: `python -m unittest discover -s tests -v`.
