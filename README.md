@@ -8,11 +8,13 @@ The homepage shows what you can do on STEMEd+. This page says why it exists and 
 1. **Ours, not mine.** The mission, with Join and a link to the homepage.
 2. **Why we built this.** Scattered, locked away, lost.
 3. **What we're building.** Open access, open scholarship, open infrastructure, and why the plus.
-4. **Where we're headed.** Peer review, humane metrics, communities with a say.
+4. **Who it's for.** You belong here: teachers, researchers, and learning professionals from every field.
 5. **Why take part.** What you get, and what you give.
-6. **Who's behind it.** NSF, Knowledge Commons and GitHub, the Advisory Board and User Advisory Committee.
-7. **Your first three steps,** with a first link for each role.
-8. **Collaborate with us.** Writing STEMEd+ into a grant: guided onboarding and co-design.
+6. **Where we're headed.** Peer review, humane metrics, communities with a say.
+7. **Who's behind it.** NSF, Knowledge Commons and GitHub, the Advisory Board and User Advisory Committee.
+8. **Your first three steps,** with a first link for each role.
+9. **Other community resources.** Useful projects run by others.
+10. **Collaborate with us.** Writing STEMEd+ into a grant: guided onboarding and co-design.
 
 ## Editing
 
