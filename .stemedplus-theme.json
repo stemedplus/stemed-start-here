@@ -1,4 +1,14 @@
 {
-  "asset_dirs": ["site"],
-  "bars": [{"file": "site/index.html"}]
+  "asset_dirs": [
+    "site"
+  ],
+  "bars": [
+    {
+      "file": "site/index.html"
+    },
+    {
+      "file": "site/open/index.html",
+      "logo": "../stemedplus-commons-logo-white.png"
+    }
+  ]
 }
